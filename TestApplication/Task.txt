@@ -1,0 +1,3 @@
+Get the components of the current system, also get their details Name, Model name, metadata
+
+Display all the data

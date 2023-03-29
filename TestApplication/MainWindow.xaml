@@ -1,0 +1,76 @@
+﻿<Window x:Class="TestApplication.MainWindow"
+        Background="Black"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestApplication"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderThickness="1" BorderBrush="Aqua">
+            <ContentControl>
+                <StackPanel>
+                    <Label Foreground="White" HorizontalAlignment="Center">CPU</Label>
+                    <ListView x:Name="CpuList" Background="DimGray" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Background="Transparent" Orientation="Horizontal">
+                                    <Label Foreground="White" Content="{Binding Name}"></Label>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </ContentControl>
+        </Border>
+        <Border Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderThickness="1" BorderBrush="White">
+            <ContentControl>
+                <StackPanel>
+                    <Label Foreground="White" HorizontalAlignment="Center">RAM </Label>
+                    <Label x:Name="RamLabel" Foreground="White"></Label>
+                </StackPanel>
+            </ContentControl>
+        </Border>
+        <Border Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderThickness="1" BorderBrush="BlanchedAlmond">
+            <ContentControl>
+                <StackPanel>
+                    <Label Foreground="White" HorizontalAlignment="Center">GPU Info</Label>
+                    <ListView Background="DimGray" x:Name="GpuList" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Background="Transparent" Orientation="Horizontal">
+                                    <Label Foreground="White" Content="{Binding Name}"></Label>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </ContentControl>
+        </Border>
+        <Border Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" BorderThickness="1" BorderBrush="Aquamarine">
+            <ContentControl>
+                <StackPanel>
+                    <Label Foreground="White" HorizontalAlignment="Center">Drives</Label>
+                    <ListView  Background="DimGray" x:Name="DrivesList" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Background="Transparent" Orientation="Horizontal">
+                                    <Label Foreground="White" Content="{Binding}"></Label>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </ContentControl>
+        </Border>
+
+    </Grid>
+</Window>
